@@ -1,0 +1,5 @@
+{
+  "name": "Home Assistant Add-on: HA-OpenLDAP-Server",
+  "url": "https://github.com/flight2k/ha-openldap-addon",
+  "maintainer": "Frédéric Paillé <ordilogic@gmail.com>"
+}
