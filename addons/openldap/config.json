@@ -1,0 +1,23 @@
+{
+  "name": "OpenLDAP + phpLDAPadmin",
+  "version": "1.1.0",
+  "slug": "openldap",
+  "description": "OpenLDAP server with phpLDAPadmin web interface",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "ports": {
+    "389/tcp": 389,
+    "636/tcp": 636,
+    "6443/tcp": 6443
+  },
+  "map": ["config:rw", "ssl", "data:rw"],
+  "options": {
+    "ldap_domain": "example.org",
+    "admin_password": "admin"
+  },
+  "schema": {
+    "ldap_domain": "str",
+    "admin_password": "str"
+  }
+}
