@@ -7,7 +7,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy phpLDAPadmin config
-COPY php-config.php /etc/phpldapadmin/config.php
+COPY php-config.template.php /etc/phpldapadmin/config.template.php
 
 # Replace default startup script
 COPY run.sh /container/run/run.sh
