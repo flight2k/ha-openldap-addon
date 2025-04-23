@@ -1,18 +1,18 @@
-FROM osixia/openldap:1.5.0
+FROM debian:bullseye
 
-# Install phpLDAPadmin
+# Mise à jour + install
 RUN apt-get update && \
-    apt-get install -y phpldapadmin apache2 && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    slapd ldap-utils apache2 phpldapadmin && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy phpLDAPadmin config
+# Copie des fichiers de config
 COPY php-config.template.php /etc/phpldapadmin/config.template.php
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
 
-# Replace default startup script
-COPY run.sh /container/run/run.sh
-RUN chmod +x /container/run/run.sh
+# Activer SSL
+RUN a2enmod ssl && a2ensite default-ssl
 
-# Enable SSL for Apache (simple self-signed)
-RUN a2enmod ssl && \
-    a2ensite default-ssl
+CMD ["/run.sh"]
