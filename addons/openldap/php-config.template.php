@@ -1,4 +1,6 @@
 <?php
+$domain = getenv('LDAP_DC') ?: 'dc=example,dc=org';
+
 $servers = [];
 $servers[] = [
   'name' => 'Home Assistant LDAP',
@@ -6,7 +8,7 @@ $servers[] = [
   'port' => 389,
   'base' => [],
   'auth_type' => 'session',
-  'bind_id' => 'cn=admin,dc=example,dc=org',
+  'bind_id' => "cn=admin,$domain",
 ];
 $config = [
   'login_attribute' => 'uid',
