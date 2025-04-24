@@ -5,5 +5,5 @@ This add-on runs a fully functional OpenLDAP server inside your Home Assistant i
 ## Configuration
 
 ```yaml
-ldap_domain: "home.local"
-admin_password: "supersecret"
+ldap_domain: "exemple.org"
+admin_password: "admin"
