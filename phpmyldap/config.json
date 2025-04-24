@@ -1,8 +1,8 @@
 {
-  "name": "phpLDAPadmin",
+  "name": "phpmyldap",
   "version": "1.0.0",
-  "slug": "openldap",
-  "description": "phpLDAPadmin web interface",
+  "slug": "phpmyldap",
+  "description": "phpmyldap web interface",
   "startup": "services",
   "boot": "auto",
   "arch": ["amd64", "armv7", "aarch64"],
